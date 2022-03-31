@@ -39,7 +39,7 @@ def check_in(input1,input2):
   username = acounts.keys()
   usernames = list(username)
   if input1 in usernames and input2 in passwords:
-     print_slow("Welcome to this teriable program")
+     print_slow("Welcome to this terrible program")
 
 def acount():
   print_slow('Would you like to:\n')

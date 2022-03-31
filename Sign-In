@@ -1,0 +1,59 @@
+import time
+
+acounts = {}
+
+file = open('data.txt', 'r+')
+
+for line in file:
+  data = line.split()
+  if len(data) == 2:
+      key , value = data[0], data[1]
+      acounts[key] = value
+print(acounts)
+
+def print_slow(str):
+  for char in str:
+      print(char, end='', flush=True)
+      time.sleep(0.1)
+      
+def check(input1,input2):
+  password = acounts.values()
+  passwords = list(password)
+  
+  username = acounts.keys()
+  usernames = list(username)
+
+  if input1 in usernames and input2 in passwords:
+    print_slow("This username and password is taken")
+
+  if input1 not in usernames and input2 not in passwords:
+    File = open('data.txt','a+')
+    File.write(input1 + ' ')
+    File.write(input2 + '\n')
+
+  
+def check_in(input1,input2):
+  password = acounts.values()
+  passwords = list(password)
+  
+  username = acounts.keys()
+  usernames = list(username)
+  if input1 in usernames and input2 in passwords:
+     print_slow("Welcome to this teriable program")
+
+def acount():
+  print_slow('Would you like to:\n')
+  print_slow('1) Sign in:\n')
+  print_slow('2) Sign up:\n')
+  choice = input('')
+  if choice == '1':
+    username = input("Please input a username(No Spaces) ")
+    password = input("Please input a password(No Spaces) ")
+    check_in(username,password)
+  if choice == '2':
+    files = open('data.txt', 'a')
+    username = input("Please input a username ")
+    password = input("Please input a password ")
+    check(username,password)
+    files.close()
+acount()

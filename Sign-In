@@ -1,8 +1,8 @@
 import time
 
-acounts = {}
+accounts = {}
 
-file = open('data.txt', 'r+')
+file = open('data.txt', 'w+')
 
 for line in file:
   data = line.split()
@@ -41,7 +41,7 @@ def check_in(input1,input2):
   if input1 in usernames and input2 in passwords:
      print_slow("Welcome to this terrible program")
 
-def acount():
+def account():
   print_slow('Would you like to:\n')
   print_slow('1) Sign in:\n')
   print_slow('2) Sign up:\n')
@@ -56,4 +56,4 @@ def acount():
     password = input("Please input a password ")
     check(username,password)
     files.close()
-acount()
+account()
